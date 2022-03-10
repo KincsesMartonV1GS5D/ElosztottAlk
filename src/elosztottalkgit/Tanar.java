@@ -8,20 +8,17 @@ package elosztottalkgit;
  *
  * @author Flin
  */
-abstract class Ember {
-    static int EmberSzamlalo = 0;
-    protected String Nev;
-    
+public class Tanar extends Ember{
+    private int Azonosito;
 
     
-    public Ember(String nev) {
-        EmberSzamlalo += 1;
-        this.Nev = nev + EmberSzamlalo;
+    private int Tantargyak[];
+    public Tanar(String nev) {
+        super(nev);
     }
-    
-    public String getNev() {
-        return Nev;
-    } 
+    public int getAzonosito() {
+        return Azonosito;
+    }
     @Override
     public String toString(){
         return "";
