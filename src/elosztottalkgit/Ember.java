@@ -8,6 +8,16 @@ package elosztottalkgit;
  *
  * @author Flin
  */
+
+ /**
+  * [[ Ember osztály ]]
+  * EmberSzamlalo -> számon tartja a létrehozott példányokat az osztályból
+  * Nev -> szöveges változó, tárolja az aktuális példány 'nevét'
+  * Ember() -> üres konstruktor arra az esetre ha nem lenne név megadva
+  * Ember(nev) -> név megadása esetén hozzárendeli a 'Nev' nevű változóhoz
+  * getNev() -> visszaadja a 'Nev' változó aktuális értékét
+  * toString() -> osztályleírást generál és kiíratható formában visszaadja
+  */
 abstract class Ember {
 
     static int EmberSzamlalo = 0;
