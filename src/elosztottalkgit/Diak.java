@@ -4,22 +4,33 @@
  */
 package elosztottalkgit;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Flin
  */
-public class Diak extends Ember{
+public class Diak extends Ember {
+
     private int Azonosito;
-    private int Tantargyak[];
+    private ArrayList<Tantargy> Tantargyak;
     private int Osztaly;
-    private int Atlag;
-    
-    public Diak(String nev,int osztaly) {
-        
+
+    public Diak(int osztaly) {
+        this.Osztaly = osztaly;
+        this.Tantargyak = new ArrayList<Tantargy>();
     }
+
+    public Diak(String nev, int osztaly) {
+        super(nev);
+        this.Osztaly = osztaly;
+        this.Tantargyak = new ArrayList<Tantargy>();
+    }
+
     public int getAtlag() {
-        return Atlag;
+        return 0;
     }
+
     @Override
     public String toString(){
         return "";
