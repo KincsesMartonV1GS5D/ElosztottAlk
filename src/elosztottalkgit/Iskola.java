@@ -1,6 +1,7 @@
 package elosztottalkgit;
 
 import java.util.ArrayList;
+ 
 
 public class Iskola {
     
@@ -9,9 +10,9 @@ public class Iskola {
     private ArrayList<Diak> Diakok;
 
     public Iskola() {
-        this.Tantargyak = new ArrayList<Tantargyak>();
-        this.Tanarok = new ArrayList<Tanarok>();
-        this.Diakok = new ArrayList<Diakok>();
+        this.Tantargyak = new ArrayList<Tantargy>();
+        this.Tanarok = new ArrayList<Tanar>();
+        this.Diakok = new ArrayList<Diak>();
     }
 
     public void addTantargy(Tantargy t) {
@@ -26,22 +27,22 @@ public class Iskola {
         this.Diakok.add(d);
     }
 
-    @NotImplemented
+    
     public ArrayList<Diak> getLegjobbak(int top) {
         return new ArrayList<Diak>();
     }
 
-    @NotImplemented
+    
     public boolean kiir() {
         return false;
     }
 
-    @NotImplemented
+    
     public void beolvas(String fajlnev) {
 
     }
 
-    @NotImplemented
+    
     @Override
     public String toString() {
         return "";
