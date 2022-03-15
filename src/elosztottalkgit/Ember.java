@@ -9,21 +9,27 @@ package elosztottalkgit;
  * @author Flin
  */
 abstract class Ember {
+
     static int EmberSzamlalo = 0;
     protected String Nev;
     
+    public Ember() {
+        EmberSzamlalo++;
+        this.Nev = "Ember" + EmberSzamlalo;
+    }
 
-    
     public Ember(String nev) {
-        EmberSzamlalo += 1;
+        EmberSzamlalo++;
         this.Nev = nev + EmberSzamlalo;
     }
     
     public String getNev() {
         return Nev;
     } 
+    
     @Override
     public String toString(){
         return "";
     }
+
 }
