@@ -18,6 +18,7 @@ public class Diak extends Ember {
     private int Osztaly;
 
     public Diak(int osztaly) {
+        super();
         this.Osztaly = osztaly;
         this.Tantargyak = new HashMap<Integer, Float>();
     }

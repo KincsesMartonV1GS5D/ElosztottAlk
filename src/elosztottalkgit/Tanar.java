@@ -8,18 +8,31 @@ package elosztottalkgit;
  *
  * @author Flin
  */
-public class Tanar extends Ember{
+
+/**
+ * Tanar t = new Tanar("Tanar", new int[] { 0, 1, 2 });
+ */
+public class Tanar extends Ember {
+
     private int Azonosito;
     private int Tantargyak[];
 
-    public Tanar(String nev) {
+    public Tanar(int tantargyak[]) {
+        super();
+    }
+
+    public Tanar(String nev, int tantargyak[]) {
         super(nev);
+        this.Tantargyak = tantargyak;
     }
+
     public int getAzonosito() {
-        return Azonosito;
+        return this.Azonosito;
     }
+
     @Override
     public String toString(){
         return "";
     }
+
 }
