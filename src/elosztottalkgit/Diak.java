@@ -5,7 +5,8 @@
 package elosztottalkgit;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Map;
 /**
  *
  * @author Flin
@@ -13,18 +14,21 @@ import java.util.ArrayList;
 public class Diak extends Ember {
 
     private int Azonosito;
-    private ArrayList<Tantargy> Tantargyak;
+    private Map<Integer,Float> Tantargyak;
     private int Osztaly;
 
     public Diak(int osztaly) {
         this.Osztaly = osztaly;
-        this.Tantargyak = new ArrayList<Tantargy>();
+        this.Tantargyak = new HashMap<Integer, Float>();
     }
-
+    public void addTargy(int TargyID, float DiakAtlag){
+        Tantargyak.put(TargyID,DiakAtlag);
+    }
+    
     public Diak(String nev, int osztaly) {
         super(nev);
         this.Osztaly = osztaly;
-        this.Tantargyak = new ArrayList<Tantargy>();
+        this.Tantargyak = new HashMap<Integer, Float>();
     }
 
     public int getAtlag() {
