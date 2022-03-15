@@ -29,7 +29,7 @@ abstract class Ember {
     
     @Override
     public String toString(){
-        return "";
+        return String.format("{\n\tNév: %s\n}", this.Nev);
     }
 
 }
