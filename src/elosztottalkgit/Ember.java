@@ -30,7 +30,8 @@ abstract class Ember {
 
     public Ember(String nev) {
         EmberSzamlalo++;
-        this.Nev = nev + EmberSzamlalo;
+        //this.Nev = nev + EmberSzamlalo;
+        this.Nev = nev;
     }
     
     public String getNev() {

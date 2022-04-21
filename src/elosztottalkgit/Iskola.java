@@ -1,6 +1,7 @@
 package elosztottalkgit;
 
 import java.util.ArrayList;
+import java.util.Collections;
  
 
 public class Iskola {
@@ -28,8 +29,33 @@ public class Iskola {
     }
 
     
-    public ArrayList<Diak> getLegjobbak(int top) {
-        return new ArrayList<Diak>();
+    public ArrayList<Diak> getLegjobbak(String s) {
+        ArrayList<Diak> best = new ArrayList<Diak>();
+
+        best.add(Diakok.get(0));
+        best.add(Diakok.get(1));
+        best.add(Diakok.get(2));
+        
+        
+        for (int i = 3; i < Diakok.size(); i++) {
+                
+            if (Diakok.get(i).getOsztaly() == s) {
+                
+                System.out.println(Diakok.get(i).Nev+" "+Diakok.get(i).getOsztaly());
+                System.out.println(best.get(0).Nev+" "+best.get(0).getOsztaly()+"           a");
+                if (best.get(0).getAtlag()<Diakok.get(i).getAtlag()) {
+                    best.set(0, Diakok.get(i));
+                }
+                if(best.get(1).getAtlag()<Diakok.get(i).getAtlag()){
+                    best.set(1, Diakok.get(i));
+                }
+                if(best.get(2).getAtlag()<Diakok.get(i).getAtlag()){
+                    best.set(2, Diakok.get(i));
+                }
+            }
+            
+        }
+        return best;
     }
 
     

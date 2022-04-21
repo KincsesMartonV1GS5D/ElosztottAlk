@@ -14,10 +14,13 @@ import java.util.Map;
 public class Diak extends Ember {
 
     private int Azonosito;
-    private Map<Integer,Float> Tantargyak;
-    private int Osztaly;
+    private String Osztaly;
 
-    public Diak(int osztaly) {
+    
+    private Map<Integer,Float> Tantargyak;
+    
+
+    public Diak(String osztaly) {
         super();
         this.Osztaly = osztaly;
         this.Tantargyak = new HashMap<Integer, Float>();
@@ -26,16 +29,27 @@ public class Diak extends Ember {
         Tantargyak.put(TargyID,DiakAtlag);
     }
     
-    public Diak(String nev, int osztaly) {
+        public Diak(String nev, String osztaly) {
         super(nev);
+        this.Azonosito = this.EmberSzamlalo;
         this.Osztaly = osztaly;
         this.Tantargyak = new HashMap<Integer, Float>();
     }
 
-    public int getAtlag() {
-        return 0;
+    public float getAtlag() {
+        float szum = 0;
+        for (Map.Entry<Integer,Float> entry : this.Tantargyak.entrySet())
+            szum += entry.getValue();
+        
+        return szum/this.Tantargyak.size();
+    }
+    public int getAzonosito() {
+        return Azonosito;
     }
 
+    public String getOsztaly() {
+        return Osztaly;
+    }
     @Override
     public String toString(){
         return "";
