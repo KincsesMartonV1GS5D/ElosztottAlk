@@ -31,30 +31,21 @@ public class Iskola {
     
     public ArrayList<Diak> getLegjobbak(String s) {
         ArrayList<Diak> best = new ArrayList<Diak>();
-
-        best.add(Diakok.get(0));
-        best.add(Diakok.get(1));
-        best.add(Diakok.get(2));
-        
-        
-        for (int i = 3; i < Diakok.size(); i++) {
-                
-            if (Diakok.get(i).getOsztaly() == s) {
-                
-                System.out.println(Diakok.get(i).Nev+" "+Diakok.get(i).getOsztaly());
-                System.out.println(best.get(0).Nev+" "+best.get(0).getOsztaly()+"           a");
-                if (best.get(0).getAtlag()<Diakok.get(i).getAtlag()) {
-                    best.set(0, Diakok.get(i));
-                }
-                if(best.get(1).getAtlag()<Diakok.get(i).getAtlag()){
-                    best.set(1, Diakok.get(i));
-                }
-                if(best.get(2).getAtlag()<Diakok.get(i).getAtlag()){
-                    best.set(2, Diakok.get(i));
+        for (int i = 0; i < Diakok.size(); i++) {
+            if (Diakok.get(i).getOsztaly().equals(s)) {
+                best.add(Diakok.get(i));
+            }
+        }
+            for (int i = 0; i < best.size(); i++) {
+                for (int k = 1; k < best.size()-i; k++) {
+                    if (best.get(k-1).getAtlag()<best.get(k).getAtlag()) {
+                        Collections.swap(best,k,k-1);
+                    }
                 }
             }
-            
-        }
+        /*for (int i = 0; i < best.size(); i++) {
+            System.out.println("  "+best.get(i).Nev+" "+best.get(i).getOsztaly()+" "+ best.get(i).getAtlag()+" "+best.get(i).getAzonosito());
+        }*/
         return best;
     }
 

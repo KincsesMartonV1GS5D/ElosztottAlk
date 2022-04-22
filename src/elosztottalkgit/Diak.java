@@ -15,7 +15,7 @@ public class Diak extends Ember {
 
     private int Azonosito;
     private String Osztaly;
-
+    
     
     private Map<Integer,Float> Tantargyak;
     
