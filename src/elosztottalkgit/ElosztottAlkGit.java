@@ -4,6 +4,8 @@
  */
 package elosztottalkgit;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +17,8 @@ public class ElosztottAlkGit {
     /**
      * @param args the command line arguments
      */
+    private static String txtNeve = "A_legjobbak_log";
+    
     public static void main(String[] args) {
         
         Iskola iskola = new Iskola();
@@ -72,13 +76,26 @@ public class ElosztottAlkGit {
         Tanar tanar0 = new Tanar("Béla", new int[]{0,1});
         
         iskola.addTanar(tanar0);
-//        System.out.println(diak0.getAtlag());
+        //System.out.println(diak0.getAtlag());
         
-        ArrayList<Diak> top = iskola.getLegjobbak("a1");
+        String top = iskola.getLegjobbak("a1");
         
-        for (int i = 0; i < 3; i++) {
-            System.out.println(i+" "+top.get(i).Nev+" "+top.get(i).getAtlag()+" "+top.get(i).getAzonosito());
+        //siman kiirja a legjobbakat
+        System.out.printf("%-9s%-10s%-6s%-10s%n","Helyezes","Nev","Atlag","Azonosíto");
+        String split[] = top.split(",");
+        for (int i = 0;  i <=8; i+=4) {
+            System.out.printf("%-9s%-10s%-6s%-10s%n",split[i],split[i+1],split[i+2],split[i+3]);
         }
+        
+        //elvalaszto
+        System.out.println("");
+        //Letrehozza a txtNeve vel a filet
+        LegjobbakMentes.createLegjobbak(txtNeve);
+        //Beleirja a txtNeve vel es contentel a filet
+        LegjobbakMentes.writeToFile(txtNeve, top);
+        //Kiszedi a txtNeve file contentjet
+        LegjobbakMentes.readFromFile(txtNeve);
     }
+
     
 }

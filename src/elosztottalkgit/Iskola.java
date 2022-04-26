@@ -29,7 +29,7 @@ public class Iskola {
     }
 
     
-    public ArrayList<Diak> getLegjobbak(String s) {
+    public String getLegjobbak(String s) {
         ArrayList<Diak> best = new ArrayList<Diak>();
         for (int i = 0; i < Diakok.size(); i++) {
             if (Diakok.get(i).getOsztaly().equals(s)) {
@@ -43,10 +43,11 @@ public class Iskola {
                     }
                 }
             }
-        /*for (int i = 0; i < best.size(); i++) {
-            System.out.println("  "+best.get(i).Nev+" "+best.get(i).getOsztaly()+" "+ best.get(i).getAtlag()+" "+best.get(i).getAzonosito());
-        }*/
-        return best;
+        String content = "";
+        for (int i = 0; i < best.size(); i++) {
+            content += i+1 +","+ best.get(i).Nev +","+ best.get(i).getAtlag() +","+ best.get(i).getAzonosito()+",";
+        }
+        return content;
     }
 
     
