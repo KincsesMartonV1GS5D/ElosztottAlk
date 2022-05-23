@@ -23,7 +23,7 @@ public class ElosztottAlkGit {
         
         Iskola iskola = new Iskola();
         
-        
+        //create diakok and targy 
         Diak diak = new Diak("Patrik","a1");
         diak.addTargy(0, (float) 5);
         diak.addTargy(1, (float) 2);
@@ -40,13 +40,14 @@ public class ElosztottAlkGit {
         Jozsi.addTargy(0, (float) 3);
         Jozsi.addTargy(1, (float) 3);
         
+        //add diakok to iskola
         iskola.addDiak(diak);
         iskola.addDiak(diak0);
         iskola.addDiak(Eszter);
         iskola.addDiak(Peti);
         iskola.addDiak(Jozsi);
         
-        
+        //create diakok and targy 
         Diak diak1 = new Diak("Sanyi","b2");
         diak1.addTargy(0, (float) 5);
         diak1.addTargy(1, (float) 5);
@@ -61,26 +62,30 @@ public class ElosztottAlkGit {
         diak4.addTargy(1, (float) 1);
 
         
-        
+        //add diakok to iskola
         iskola.addDiak(diak1);
         iskola.addDiak(diak2);
         iskola.addDiak(diak3);
         iskola.addDiak(diak4);
         
+        //create targyak
         Tantargy matek = new Tantargy("Matek");
         Tantargy foldrajz = new Tantargy("Foldrajz");
         
+        //add targyak to iskola
         iskola.addTantargy(matek);
         iskola.addTantargy(foldrajz);
         
+        //create tanar
         Tanar tanar0 = new Tanar("Béla", new int[]{0,1});
         
+        //add tanar to iskola
         iskola.addTanar(tanar0);
         //System.out.println(diak0.getAtlag());
         
         String top = iskola.getLegjobbak("a1");
         
-        //siman kiirja a legjobbakat
+        //siman kiirja a legjobbakat a top alapjan
         System.out.printf("%-9s%-10s%-6s%-10s%n","Helyezes","Nev","Atlag","Azonosíto");
         String split[] = top.split(",");
         for (int i = 0;  i <=8; i+=4) {
